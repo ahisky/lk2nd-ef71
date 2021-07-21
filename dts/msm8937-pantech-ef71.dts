@@ -1,0 +1,24 @@
+// SPDX-License-Identifier: GPL-2.0-only
+// Copyright (C) 2021 - androians-hi SKY Developings (ahiSKY)
+// Licensed under the MIT License : Check LICENSE in root directory
+
+/dts-v1/;
+
+/include/ "msm8952.dtsi"
+
+/ {
+	// This is used by the bootloader to find the correct DTB 
+	qcom,pmic-id = <0x10019 0x010011 0x0 0x0>;
+	qcom,board-id= <206 0>;
+
+	model = "Pantech, Inc. EF71S from MSM8937-PMI8950 MTP";
+	compatible = "qcom,msm8937-mtp", "qcom,msm8937", "qcom,mtp", "lk2nd,device";
+
+	// Bootloader won't continue if it can't delete some nodes from below
+	soc {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges = <0x0 0x0 0x0 0xffffffff>;
+
+	};
+};
